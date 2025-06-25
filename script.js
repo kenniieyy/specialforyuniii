@@ -112,7 +112,7 @@ function updateCountdown() {
     }
 
     const timeOnPage = Date.now() - window.countdownStartTime
-    if (timeOnPage > 10000 && !isCountdownFinished) {
+    if (timeOnPage > 30000 && !isCountdownFinished) {
       // 30 seconds
       isCountdownFinished = true
       showBirthdayPage()
@@ -263,12 +263,12 @@ function closeModalHandler() {
 
 function getMessageContent() {
   return `
-    <div class="content-section" style="background: linear-gradient(135deg, #dbeafe, #e0f2fe);">
-      <div class="content-title" style="position: relative;">
-        <div style="position: absolute; inset: 0; background: radial-gradient(circle, rgba(59, 130, 246, 0.2), transparent 70%); border-radius: 50%; filter: blur(40px); animation: pulse 3s infinite;"></div>
-        <h3 style="position: relative; font-size: 1.5rem; font-weight: 700; background: linear-gradient(45deg, #2563eb, #0ea5e9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 16px;">
-          Barakallah fii umrik, Yuniii 🎉
-        </h3>
+    <div class="content-section">
+      <div class="content-title">
+        Barakallah fii umrik, Yuniii 🎉
+      </div>
+      <div class="content-subtitle">
+        Pesan spesial dari sahabat terbaik
       </div>
       <div class="message-content">
         <p>Selamat memasuki angka yang lebih tinggi dari sebelumnya, yun. Berkah umurnya, panjang umur, sehat selalu, dimudahkan rezekinya, jadi anak yang selalu berbakti sama orang tua.</p>
@@ -281,7 +281,7 @@ function getMessageContent() {
         
         <p>Teruslah tumbuh jadi versi terbaik dari dirimu 🌱</p>
         
-        <p class="highlight-text" style="font-size: 1rem; font-weight: 600; text-align: center; margin-top: 24px;">
+        <p class="highlight-text">
           I wish I can tell u how much I love you. We're not just a bestfriend, WE'RE SISTER.🫶
         </p>
       </div>
@@ -291,12 +291,12 @@ function getMessageContent() {
 
 function getGalleryContent() {
   return `
-    <div class="content-section" style="background: linear-gradient(135deg, #cffafe, #dbeafe);">
-      <div class="gallery-header">
-        <h3 class="gallery-title">
-          Galeri Bersama Yuni 📸
-        </h3>
-        <p class="gallery-subtitle">Momen-momen indah yang terabadikan</p>
+    <div class="content-section">
+      <div class="content-title">
+        Galeri Bersama Yuni 📸
+      </div>
+      <div class="content-subtitle">
+        Momen-momen indah yang terabadikan
       </div>
       
       <div class="photo-grid">
@@ -344,11 +344,13 @@ function handleImageError(img, photoNumber) {
 
 function getVideoContent() {
   return `
-    <div class="content-section" style="background: linear-gradient(135deg, #e0f2fe, #dbeafe);">
-      <h3 class="content-title" style="background: linear-gradient(45deg, #0ea5e9, #2563eb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+    <div class="content-section">
+      <div class="content-title">
         Layar Cerita Kita
-      </h3>
-      <p class="content-subtitle">Kumpulan foto yang dirangkai jadi satu video sederhana.</p>
+      </div>
+      <div class="content-subtitle">
+        Kumpulan foto yang dirangkai jadi satu video sederhana
+      </div>
       
       <div class="video-container">
         <video controls poster="photo/foto1.jpg" preload="metadata" style="width: 100%; height: auto;">
@@ -375,12 +377,12 @@ function getMusicContent() {
   ]
 
   return `
-    <div class="content-section" style="background: linear-gradient(135deg, #dbeafe, #e0e7ff);">
-      <div class="gallery-header">
-        <h3 class="content-title">
-          Cuplikan Sound Spesial Buat Yuni 🔊
-        </h3>
-        <p class="content-subtitle">Bukan full music, tapi potongan suara yang penuh makna💖</p>
+    <div class="content-section">
+      <div class="content-title">
+        Cuplikan Sound Spesial Buat Yuni 🔊
+      </div>
+      <div class="content-subtitle">
+        Bukan full music, tapi potongan suara yang penuh makna💖
       </div>
       
       <div class="music-list">
