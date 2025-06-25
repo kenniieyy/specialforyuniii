@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Yuni! 🎂</title>
+    <meta name="description" content="Special birthday countdown and celebration page for Yuni">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Countdown Page -->
+    <div id="countdown-page" class="countdown-container">
+        <!-- Animated Background -->
+        <div class="background-elements">
+            <!-- Floating particles will be added by JS -->
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+        </div>
+
+        <div class="countdown-content">
+            <!-- Header -->
+            <div class="countdown-header">
+                <div class="badge">
+                    <svg class="sparkle sparkle-1" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <span>This Page Is for You💌</span>
+                    <svg class="sparkle sparkle-2" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                </div>
+                <h1 class="main-title">SPECIAL FOR YUNIIII</h1>
+                <div class="cake-emoji">🎂</div>
+            </div>
+
+            <!-- Countdown Timer -->
+            <div class="countdown-timer">
+                <div class="time-box">
+                    <div class="time-value days-bg">
+                        <div class="time-number" id="days">00</div>
+                    </div>
+                    <div class="time-label">HARI</div>
+                </div>
+                <div class="time-box">
+                    <div class="time-value hours-bg">
+                        <div class="time-number" id="hours">00</div>
+                    </div>
+                    <div class="time-label">JAM</div>
+                </div>
+                <div class="time-box">
+                    <div class="time-value minutes-bg">
+                        <div class="time-number" id="minutes">00</div>
+                    </div>
+                    <div class="time-label">MENIT</div>
+                </div>
+                <div class="time-box">
+                    <div class="time-value seconds-bg">
+                        <div class="time-number" id="seconds">00</div>
+                    </div>
+                    <div class="time-label">DETIK</div>
+                </div>
+            </div>
+
+            <!-- Target Date -->
+            <div class="target-date">
+                <p>🗓️ Menuju <span class="target-highlight">25 Juni 2025, 14:00 WIB</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Birthday Page -->
+    <div id="birthday-page" class="birthday-container" style="display: none;">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-content">
+                <h1 class="header-title">
+                    <svg class="gift-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20,12 20,22 4,22 4,12"/>
+                        <rect x="2" y="7" width="20" height="5"/>
+                        <line x1="12" y1="22" x2="12" y2="7"/>
+                        <path d="M12,7L12,7a5,5 0 0,1 5,-5a3,3 0 0,1 3,3a3,3 0 0,1 -3,3a5,5 0 0,1 -5,5"/>
+                        <path d="M12,7L12,7a5,5 0 0,0 -5,-5a3,3 0 0,0 -3,3a3,3 0 0,0 3,3a5,5 0 0,0 5,5"/>
+                    </svg>
+                    <span class="title-text">Happy Birthday Yuni!</span>
+                </h1>
+                <button id="music-btn" class="music-btn">
+                    <svg id="play-icon" class="music-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="5,3 19,12 5,21"/>
+                    </svg>
+                    <svg id="pause-icon" class="music-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                        <rect x="6" y="4" width="4" height="16"/>
+                        <rect x="14" y="4" width="4" height="16"/>
+                    </svg>
+                    <span class="music-text">Play</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <!-- Welcome Section -->
+            <div class="welcome-section">
+                <div class="welcome-emoji">🎉</div>
+                <h2 class="surprise-title">SURPRISE!</h2>
+                <p class="welcome-text">
+                    Welcome to a page full of little memories.✨<br>
+                    Isinya mungkin sederhana, tapi semua punya cerita hehe
+                </p>
+            </div>
+
+            <!-- Menu Cards -->
+            <div class="menu-grid">
+                <div class="menu-card ucapan-card" onclick="openModal('ucapan')">
+                    <div class="card-content ucapan-bg">
+                        <div class="card-overlay"></div>
+                        <div class="card-orb orb-1"></div>
+                        <div class="card-orb orb-2"></div>
+                        <div class="card-inner">
+                            <div class="card-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                </svg>
+                            </div>
+                            <h3 class="card-title">Pesan Buat Kamu</h3>
+                            <div class="card-line"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card galeri-card" onclick="openModal('galeri')">
+                    <div class="card-content galeri-bg">
+                        <div class="card-overlay"></div>
+                        <div class="card-orb orb-1"></div>
+                        <div class="card-orb orb-2"></div>
+                        <div class="card-inner">
+                            <div class="card-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                                    <circle cx="12" cy="13" r="4"/>
+                                </svg>
+                            </div>
+                            <h3 class="card-title">Slide Memori</h3>
+                            <div class="card-line"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card video-card" onclick="openModal('video')">
+                    <div class="card-content video-bg">
+                        <div class="card-overlay"></div>
+                        <div class="card-orb orb-1"></div>
+                        <div class="card-orb orb-2"></div>
+                        <div class="card-inner">
+                            <div class="card-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="23,7 16,12 23,17"/>
+                                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+                                </svg>
+                            </div>
+                            <h3 class="card-title">Layar Cerita</h3>
+                            <div class="card-line"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card musik-card" onclick="openModal('musik')">
+                    <div class="card-content musik-bg">
+                        <div class="card-overlay"></div>
+                        <div class="card-orb orb-1"></div>
+                        <div class="card-orb orb-2"></div>
+                        <div class="card-inner">
+                            <div class="card-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 18V5l12-2v13"/>
+                                    <circle cx="6" cy="18" r="3"/>
+                                    <circle cx="18" cy="16" r="3"/>
+                                </svg>
+                            </div>
+                            <h3 class="card-title">Sound (Ngga) Biasa</h3>
+                            <div class="card-line"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Dari ❤️ buat Yuni</p>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title" class="modal-title"></h2>
+                <button id="close-modal" class="close-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+            <div id="modal-body" class="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Photo Modal -->
+    <div id="photo-modal" class="photo-modal" style="display: none;">
+        <button id="prev-photo" class="nav-btn nav-prev">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15,18 9,12 15,6"/>
+            </svg>
+        </button>
+        <button id="next-photo" class="nav-btn nav-next">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9,18 15,12 9,6"/>
+            </svg>
+        </button>
+        <div class="photo-container">
+            <img id="modal-photo" src="/placeholder.svg?height=400&width=400" alt="">
+            <div class="photo-info">
+                <h4 id="photo-title">Foto Kenangan</h4>
+                <p id="photo-counter">1 dari 12 foto</p>
+            </div>
+        </div>
+        <button id="close-photo" class="close-photo-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Background Audio -->
+    <audio id="background-music" loop>
+        <source src="music/songutama.mp3" type="audio/mpeg">
+        <source src="music/songutama.mp4" type="audio/mp4">
+        <source src="music/songutama.mpeg" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
