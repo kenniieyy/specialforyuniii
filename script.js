@@ -112,8 +112,8 @@ function updateCountdown() {
     }
 
     const timeOnPage = Date.now() - window.countdownStartTime
-    if (timeOnPage > 30000 && !isCountdownFinished) {
-      // 30 seconds
+    if (timeOnPage > 5000 && !isCountdownFinished) {
+      // 5 seconds
       isCountdownFinished = true
       showBirthdayPage()
     }
@@ -268,7 +268,7 @@ function getMessageContent() {
         Barakallah fii umrik, Yuniii 🎉
       </div>
       <div class="content-subtitle">
-        Pesan spesial dari sahabat terbaik
+        Harapan baik yang datang di hari bahagiamu
       </div>
       <div class="message-content">
         <p>Selamat memasuki angka yang lebih tinggi dari sebelumnya, yun. Berkah umurnya, panjang umur, sehat selalu, dimudahkan rezekinya, jadi anak yang selalu berbakti sama orang tua.</p>
@@ -382,7 +382,7 @@ function getMusicContent() {
         Cuplikan Sound Spesial Buat Yuni 🔊
       </div>
       <div class="content-subtitle">
-        Bukan full music, tapi potongan suara yang penuh makna💖
+        Bukan full music, tapi potongan suara yang penuh makna
       </div>
       
       <div class="music-list">
