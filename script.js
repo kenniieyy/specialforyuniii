@@ -5,8 +5,8 @@ let backgroundMusic = null
 let selectedPhoto = 1
 const totalPhotos = 12
 
-// Target date: 25 Juni 2025, 14:00 WIB (UTC+7)
-const targetDate = new Date("2025-06-25T14:00:00+07:00")
+// Target date: 22 Juni 2025, 00:00 WIB (UTC+7) - tanggal ulang tahun yang sebenarnya
+const targetDate = new Date("2025-06-22T00:00:00+07:00")
 
 // Initialize when page loads
 document.addEventListener("DOMContentLoaded", () => {
@@ -88,14 +88,39 @@ function updateCountdown() {
   const now = new Date().getTime()
   const distance = targetDate.getTime() - now
 
+  // Jika sudah lewat, hitung berapa lama sudah lewat
   if (distance < 0) {
-    if (!isCountdownFinished) {
+    const pastTime = Math.abs(distance)
+    const days = Math.floor(pastTime / (1000 * 60 * 60 * 24))
+    const hours = Math.floor((pastTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+    const minutes = Math.floor((pastTime % (1000 * 60 * 60)) / (1000 * 60))
+    const seconds = Math.floor((pastTime % (1000 * 60)) / 1000)
+
+    const daysEl = document.getElementById("days")
+    const hoursEl = document.getElementById("hours")
+    const minutesEl = document.getElementById("minutes")
+    const secondsEl = document.getElementById("seconds")
+
+    if (daysEl) daysEl.textContent = days.toString().padStart(2, "0")
+    if (hoursEl) hoursEl.textContent = hours.toString().padStart(2, "0")
+    if (minutesEl) minutesEl.textContent = minutes.toString().padStart(2, "0")
+    if (secondsEl) secondsEl.textContent = seconds.toString().padStart(2, "0")
+
+    // Give users time to see the late countdown - wait 30 seconds after page load
+    if (!window.countdownStartTime) {
+      window.countdownStartTime = Date.now()
+    }
+
+    const timeOnPage = Date.now() - window.countdownStartTime
+    if (timeOnPage > 10000 && !isCountdownFinished) {
+      // 30 seconds
       isCountdownFinished = true
       showBirthdayPage()
     }
     return
   }
 
+  // Countdown normal jika belum lewat
   const days = Math.floor(distance / (1000 * 60 * 60 * 24))
   const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
@@ -113,13 +138,13 @@ function updateCountdown() {
 }
 
 function checkCountdownStatus() {
-  const now = new Date().getTime()
-  const distance = targetDate.getTime() - now
-
-  if (distance < 0) {
-    isCountdownFinished = true
-    showBirthdayPage()
-  }
+  // Remove the immediate switch logic - let countdown page always show first
+  // const now = new Date().getTime()
+  // const distance = targetDate.getTime() - now
+  // if (distance < -10000) {
+  //   isCountdownFinished = true
+  //   showBirthdayPage()
+  // }
 }
 
 function showBirthdayPage() {
@@ -266,7 +291,7 @@ function getMessageContent() {
 
 function getGalleryContent() {
   return `
-    <div class="content-section">
+    <div class="content-section" style="background: linear-gradient(135deg, #cffafe, #dbeafe);">
       <div class="gallery-header">
         <h3 class="gallery-title">
           Galeri Bersama Yuni 📸
@@ -350,7 +375,7 @@ function getMusicContent() {
   ]
 
   return `
-    <div class="content-section">
+    <div class="content-section" style="background: linear-gradient(135deg, #dbeafe, #e0e7ff);">
       <div class="gallery-header">
         <h3 class="content-title">
           Cuplikan Sound Spesial Buat Yuni 🔊
@@ -383,7 +408,7 @@ function getMusicContent() {
                   <source src="music/${song.file}.mpeg" type="audio/mpeg">
                   <source src="music/${song.file}.ogg" type="audio/ogg">
                   Browser Anda tidak mendukung audio HTML5.
-                </audio>
+                </source>
               </div>
             </div>
           `,
