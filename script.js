@@ -293,7 +293,7 @@ function getGalleryContent() {
   return `
     <div class="content-section">
       <div class="content-title">
-        Galeri Bersama Yuni 📸
+        Galeri Bersama Yuni 
       </div>
       <div class="content-subtitle">
         Momen-momen indah yang terabadikan
@@ -379,7 +379,7 @@ function getMusicContent() {
   return `
     <div class="content-section">
       <div class="content-title">
-        Cuplikan Sound Spesial Buat Yuni 🔊
+        Cuplikan Sound Spesial Buat Yuni 
       </div>
       <div class="content-subtitle">
         Bukan full music, tapi potongan suara yang penuh makna
