@@ -32,17 +32,6 @@ body {
   padding: 1rem;
 }
 
-.welcome-section.fullscreen-center {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  text-align: center;
-}
-
-
 .countdown-content {
   position: relative;
   z-index: 10;
@@ -346,12 +335,10 @@ body {
   -ms-overflow-style: none;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;  /* KEMBALIKAN KE INI */
+  justify-content: center; /* UBAH DARI flex-start KE center */
   align-items: center;
   min-height: calc(100vh - clamp(60px, 12vw, 80px));
 }
-
-
 
 .main-content::-webkit-scrollbar {
   display: none;
@@ -361,7 +348,7 @@ body {
   text-align: center;
   margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
   width: 100%;
-  padding-top: 8vh; /* Tambahkan ini saja */
+  /* HAPUS padding-top: 8vh; */
 }
 
 .welcome-emoji {
@@ -1304,4 +1291,3 @@ body {
     transform: translateY(-5px);
   }
 }
-
