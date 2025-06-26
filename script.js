@@ -337,7 +337,7 @@ function handleImageError(img, photoNumber) {
     img.src = `photo/foto${photoNumber}.PNG`
   } else {
     // If all formats fail, show placeholder
-    img.src = `/placeholder.svg?height=200&width=200`
+    img.src = `https://images.pexels.com/photos/1040881/pexels-photo-1040881.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop`
     img.alt = `Foto ${photoNumber} (placeholder)`
   }
 }
