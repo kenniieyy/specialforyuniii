@@ -40,7 +40,7 @@ function createFloatingParticles() {
   const container = document.querySelector(".background-elements")
   if (!container) return
 
-  for (let i = 0; i < 12; i++) {
+  for (let i = 0; i < 8; i++) {
     const particle = document.createElement("div")
     particle.className = "floating-particle"
     particle.style.left = Math.random() * 100 + "%"
@@ -392,7 +392,7 @@ function getMusicContent() {
             <div class="music-item">
               <div class="music-header">
                 <div class="music-icon-bg">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M9 18V5l12-2v13"/>
                     <circle cx="6" cy="18" r="3"/>
                     <circle cx="18" cy="16" r="3"/>
@@ -404,13 +404,13 @@ function getMusicContent() {
                 </div>
               </div>
               <div class="music-player">
-                <audio controls preload="metadata" style="width: 100%; height: 32px; border-radius: 8px; filter: sepia(20%) saturate(70%) hue-rotate(180deg);">
+                <audio controls preload="metadata" style="width: 100%; height: 28px; border-radius: 8px; filter: sepia(20%) saturate(70%) hue-rotate(180deg);">
                   <source src="music/${song.file}.mp3" type="audio/mpeg">
                   <source src="music/${song.file}.mp4" type="audio/mp4">
                   <source src="music/${song.file}.mpeg" type="audio/mpeg">
                   <source src="music/${song.file}.ogg" type="audio/ogg">
                   Browser Anda tidak mendukung audio HTML5.
-                </source>
+                </audio>
               </div>
             </div>
           `,
