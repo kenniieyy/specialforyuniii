@@ -382,7 +382,7 @@ function getMusicContent() {
         Cuplikan Sound Spesial Buat Yuni 
       </div>
       <div class="content-subtitle">
-        Bukan full music, tapi potongan suara yang penuh makna
+        Potongan suara penuh makna
       </div>
       
       <div class="music-list">
