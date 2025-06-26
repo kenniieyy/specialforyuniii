@@ -1277,3 +1277,11 @@ body {
     opacity: 1 !important;
   }
 }
+
+@media (max-width: 768px) {
+  .title-text {
+    font-size: 1rem !important; /* Ukuran kecil */
+  }
+}
+
+
