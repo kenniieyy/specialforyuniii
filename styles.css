@@ -1037,10 +1037,6 @@ body {
     opacity: 1 !important;
   }
 
-  .title-text {
-    font-size: 1rem !important; /* Ukuran kecil */
-  }
-
   .modal-content {
     margin: 0.5rem;
     border-radius: 0.75rem;
@@ -1146,7 +1142,11 @@ body {
   }
 
   .title-text {
-    font-size: 1rem !important; /* Ukuran kecil */
+    display: block !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    font-size: 0.9rem;
   }
 
   .header-title {
@@ -1275,8 +1275,5 @@ body {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
-  }
-  .title-text {
-    font-size: 1rem !important; /* Ukuran kecil */
   }
 }
