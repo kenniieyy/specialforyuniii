@@ -390,6 +390,8 @@ body {
     text-align: left;
     flex: 0 0 auto;
     min-width: 0;
+    flex-direction: row;
+    align-items: center;
   }
 
   .gift-icon {
@@ -1237,10 +1239,10 @@ body {
   }
 
   .header-title {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: 0.25rem;
-    text-align: center;
+    text-align: left;
   }
 
   .music-text {
