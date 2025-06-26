@@ -335,14 +335,22 @@ body {
 }
 
 .main-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(1rem, 4vw, 2rem) clamp(0.75rem, 2vw, 1rem);
+  width: 100%;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;  /* KEMBALIKAN KE INI */
   align-items: center;
-  min-height: 100vh;
-  padding: 1.5rem;
-  gap: 2rem;
+  min-height: calc(100vh - clamp(60px, 12vw, 80px));
 }
+
 
 
 .main-content::-webkit-scrollbar {
@@ -351,10 +359,10 @@ body {
 
 .welcome-section {
   text-align: center;
-  margin: 0;
-  padding-top: 5vh;
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+  width: 100%;
+  padding-top: 8vh; /* Tambahkan ini saja */
 }
-
 
 .welcome-emoji {
   font-size: clamp(2rem, 8vw, 4rem);
