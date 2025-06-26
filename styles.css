@@ -250,7 +250,7 @@ body {
   z-index: 40;
   box-shadow: none;
   flex-shrink: 0;
-  height: 70px;
+  height: 70px; /* Fixed header height */
 }
 
 .header-content {
@@ -328,15 +328,15 @@ body {
   overflow-x: hidden;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1rem 1rem;
+  padding: 2rem 1rem 1rem; /* Reduced top padding */
   width: 100%;
   scrollbar-width: none;
   -ms-overflow-style: none;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: flex-start; /* Changed from center to flex-start */
   align-items: center;
-  min-height: calc(100vh - 70px);
+  min-height: calc(100vh - 70px); /* Account for fixed header */
 }
 
 .main-content::-webkit-scrollbar {
@@ -345,13 +345,13 @@ body {
 
 .welcome-section {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2rem; /* Reduced margin */
   width: 100%;
 }
 
 .welcome-emoji {
-  font-size: clamp(2rem, 8vw, 3rem);
-  margin-bottom: 0.5rem;
+  font-size: clamp(2rem, 8vw, 3rem); /* Reduced max size */
+  margin-bottom: 0.5rem; /* Reduced margin */
   position: relative;
 }
 
@@ -366,13 +366,13 @@ body {
 }
 
 .surprise-title {
-  font-size: clamp(1.5rem, 6vw, 2.5rem);
+  font-size: clamp(1.5rem, 6vw, 2.5rem); /* Reduced max size */
   font-weight: 900;
   background: linear-gradient(45deg, #2563eb, #0ea5e9, #06b6d4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.75rem; /* Reduced margin */
   line-height: 1.2;
 }
 
@@ -384,53 +384,13 @@ body {
   line-height: 1.6;
 }
 
-/* FIXED GRID LAYOUT - 4 cards in one row on large screens */
 .menu-grid {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(140px, 40vw, 200px), 1fr));
   gap: clamp(0.75rem, 3vw, 1.5rem);
-  max-width: 1000px;
+  max-width: 800px; /* Reduced max width */
   margin: 0 auto;
   width: 100%;
-}
-
-/* Large screens (1200px+) - 4 cards in one row */
-@media (min-width: 1200px) {
-  .menu-grid {
-    grid-template-columns: repeat(4, 1fr);
-    max-width: 1000px;
-  }
-}
-
-/* Medium-large screens (900px-1199px) - 4 cards in one row */
-@media (min-width: 900px) and (max-width: 1199px) {
-  .menu-grid {
-    grid-template-columns: repeat(4, 1fr);
-    max-width: 900px;
-  }
-}
-
-/* Medium screens (768px-899px) - 2 cards in one row */
-@media (min-width: 768px) and (max-width: 899px) {
-  .menu-grid {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 600px;
-  }
-}
-
-/* Small screens (480px-767px) - 2 cards in one row */
-@media (min-width: 480px) and (max-width: 767px) {
-  .menu-grid {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 500px;
-  }
-}
-
-/* Extra small screens (below 480px) - 1 card in one row */
-@media (max-width: 479px) {
-  .menu-grid {
-    grid-template-columns: 1fr;
-    max-width: 300px;
-  }
 }
 
 .menu-card {
@@ -439,7 +399,7 @@ body {
   transition: all 0.3s ease;
   border-radius: 1rem;
   overflow: hidden;
-  height: clamp(100px, 25vw, 140px);
+  height: clamp(100px, 25vw, 120px); /* Reduced height */
   min-height: 100px;
 }
 
@@ -1025,6 +985,77 @@ body {
   width: 100%;
   height: 32px;
   border-radius: 0.5rem;
+}
+
+/* Enhanced Mobile Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1.5rem 1rem 1rem;
+  }
+
+  .welcome-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 1rem 0.75rem 1rem;
+  }
+
+  .welcome-section {
+    margin-bottom: 1rem;
+  }
+
+  .countdown-container {
+    padding: 0.5rem;
+  }
+
+  .badge {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .countdown-header {
+    margin-bottom: 1rem;
+  }
+
+  .header-content {
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+
+  .title-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: calc(100vw - 120px);
+  }
+
+  .music-text {
+    display: none;
+  }
+
+  .music-btn {
+    padding: 0.5rem;
+    min-width: 40px;
+    justify-content: center;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
 }
 
 @keyframes bounce {
