@@ -233,6 +233,7 @@ body {
 /* Birthday Page Styles */
 .birthday-container {
   height: 100vh;
+  height: 100dvh; /* Use dynamic viewport height for better mobile support */
   width: 100vw;
   background: linear-gradient(135deg, #dbeafe 0%, #e0f2fe 50%, #cffafe 100%);
   position: fixed;
@@ -266,8 +267,9 @@ body {
   width: 100%;
   padding: 0 0.75rem;
   box-sizing: border-box;
-  min-height: calc(100vh - 110px); /* Total height minus header and footer */
-  overflow: hidden;
+  min-height: 0; /* Allow flex to work properly */
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* Footer Styles - Fixed at bottom */
@@ -1038,8 +1040,15 @@ body {
 
 /* Enhanced Mobile Responsive Design */
 @media (max-width: 768px) {
+  .birthday-container {
+    height: 100vh;
+    height: 100dvh; /* Use dynamic viewport height for mobile */
+  }
+
   .main-content {
     padding: 0.5rem 0;
+    min-height: calc(100vh - 110px);
+    min-height: calc(100dvh - 110px); /* Use dynamic viewport height */
   }
 
   .menu-grid {
@@ -1064,9 +1073,16 @@ body {
 }
 
 @media (max-width: 480px) {
+  .birthday-container {
+    height: 100vh;
+    height: 100dvh; /* Use dynamic viewport height for mobile */
+  }
+
   .main-content {
     padding: 0.5rem 0;
     justify-content: center;
+    min-height: calc(100vh - 110px);
+    min-height: calc(100dvh - 110px); /* Use dynamic viewport height */
   }
 
   .welcome-section {
@@ -1091,11 +1107,18 @@ body {
 
 /* Additional mobile viewport fixes */
 @media (max-width: 390px) {
+  .birthday-container {
+    height: 100vh;
+    height: 100dvh; /* Use dynamic viewport height for mobile */
+  }
+
   .main-content {
     /* Extra small mobile devices */
     justify-content: center;
     align-items: center;
     padding: 0.25rem 0;
+    min-height: calc(100vh - 110px);
+    min-height: calc(100dvh - 110px); /* Use dynamic viewport height */
   }
 
   .welcome-section {
